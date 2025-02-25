@@ -43,7 +43,7 @@ public class Review {
 
     @Override
     public String toString() {
-        return "User: "+user.getUsername()+" Sản phẩm : "+ product.getName()+ ". Rating point:\n"
-                +getRating()+" Comment: "+getComment();
+        return "User: "+user.getUsername()+" Sản phẩm : "+ product.getName()+ ". Rating:\n"
+                +getRating()+"⭐. Comment: "+getComment();
     }
 }

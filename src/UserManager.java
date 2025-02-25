@@ -14,14 +14,14 @@ public class UserManager{
             System.out.println("User already exists");
     }
 
-    public void checkEmailExist(String email){
+    public boolean checkEmailExist(String email){
         for(User u:users){
             if(u.getEmail().equals(email)){
                 System.out.println("Email already exists");
-                return;
+                return true;
             }
-            else System.out.println("Email does not exist");
         }
+        return false;
     }
 
     public void purchase(String username){

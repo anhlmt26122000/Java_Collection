@@ -3,11 +3,11 @@ import java.util.UUID;
 
 
 public class Order{
-    String order_id;
-    User user;
-    List<Product> products;
-    double total_price;
-    String status;
+    private String order_id;
+    private User user;
+    private List<Product> products;
+    private double total_price;
+    private String status;
 
     public Order() {
     }
@@ -46,10 +46,11 @@ public class Order{
     }
 
     public double getTotal_price() {
+        double total = 0;
         for (Product product : products) {
-            total_price += product.getPrice();
+            total += product.getPrice();
         }
-        return total_price;
+        return total;
     }
 
     public void setTotal_price(double total_price) {

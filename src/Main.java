@@ -1,4 +1,6 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -10,6 +12,7 @@ public class Main {
         Product p3= new Product("Samsung", 500, "Phone", 10);
         Product p4= new Product("Dell", 3000, "Laptop", 10);
         Product p5= new Product("Asus", 4000, "Laptop", 10);
+        listProduct.addAll(Arrays.asList(p1,p2,p3,p4,p5));
         ProductManager productManager = new ProductManager();
         productManager.addProduct(p1);
         productManager.addProduct(p2);
@@ -66,17 +69,29 @@ public class Main {
 //        }
 
         //Bai 12
-        userManager.purchase(user1.getUsername());
-        userManager.purchase(user1.getUsername());
-        userManager.purchase(user1.getUsername());
-        userManager.purchase(user2.getUsername());
-        userManager.purchase(user2.getUsername());
-        userManager.displayPurchaseHistory();
-
+//        userManager.purchase(user1.getUsername());
+//        userManager.purchase(user1.getUsername());
+//        userManager.purchase(user1.getUsername());
+//        userManager.purchase(user2.getUsername());
+//        userManager.purchase(user2.getUsername());
+//        userManager.displayPurchaseHistory();
+//
         //Bai 14
-        ReviewManager reviewManager=new ReviewManager();
-        Review review1=new Review(user1,p1,5,"Very Good");
-        reviewManager.addReview(review1);
-        reviewManager.displayAllReviews();
+//        ReviewManager reviewManager=new ReviewManager();
+//        Review review1=new Review(user1,p1,5,"Very Good");
+//        reviewManager.addReview(review1);
+//        reviewManager.displayAllReviews();
+
+        //Bai 15
+        for (Product p : listProduct) {
+            productManager.addProductTree(p);
+        }
+        productManager.displayProductTree();
+
+        List<Product> filteredProducts = productManager.getProductsInRange(1000, 3500);
+        System.out.println("List products in range 1000-3500$");
+        for (Product p : filteredProducts) {
+            System.out.println(p);
+        }
     }
 }
